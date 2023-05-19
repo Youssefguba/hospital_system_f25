@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp()); // Conflict
-}
+import 'core/themes/themes.dart';
+import 'features/features.dart';
 
+void main() {
+  runApp(const MyApp());
+
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      darkTheme: ThemeData.dark(),
+      theme: ThemeData(
+        canvasColor: ColorsHelper.primaryColor,
+        primaryColor: ColorsHelper.primaryColor,
+      ),
+      home: const SplashScreen(),
+    );
   }
 }
 
-
-// Structure
-// Core Values [ Assets / Colors ]
-// Start from first screen
+//  TODO: [x] Structure
+//  TODO: [x] Core Values [ Assets / Colors ]
+//  TODO: [] Start from first screen
